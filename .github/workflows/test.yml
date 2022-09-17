@@ -1,8 +1,9 @@
 
  language: node_js
-   node_js:14
-   
-  on :push
+ node_js:
+     - 14
+
+ on: push
 
  services :
   - docker
@@ -26,13 +27,14 @@
   
   - docker build -t reverseproxy . ./udagram-reverseproxy 
   - docker tag reverseproxy . salmasalma1998/ reverseproxy:v0 
-  
- after_success:
-  -echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
-  -docker push salmasalma1998/udagram-api-feed:v0 
-  -docker push salmasalma1998/udagram-api-user:v0 
-  -docker push salmasalma1998/udagram-frontend :v0  
- -docker  push salmasalma1998/reverseproxy :v0
+ 
+   after_success:
+ 
+      -echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin 
+      -docker push salmasalma1998/udagram-api-feed:v0 
+      -docker push salmasalma1998/udagram-api-user:v0 
+      -docker push salmasalma1998/udagram-frontend :v0  
+      -docker  push salmasalma1998/reverseproxy :v0
  
  
  
