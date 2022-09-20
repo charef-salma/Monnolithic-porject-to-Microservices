@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-configmap
+data:
+ AWS_BUCKET: my-8969-5714-7000
+ AWS_REGION: us-east-1
+ AWS_PROFILE: default
+ JWT_SECRET: testing
+ POSTGRES_PASSWORD: salmasiwar
