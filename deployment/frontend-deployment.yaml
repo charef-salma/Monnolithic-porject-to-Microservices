@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: docker.io/salmasalma1998/udagram-frontend:v2
+          image: docker.io/salmasalma1998/udagram-frontend:v4
           imagePullPolicy: Always
           ports:
             - containerPort: 80
